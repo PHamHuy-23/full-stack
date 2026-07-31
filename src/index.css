@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root, [data-theme="cyberpunk"] {
+  --bg-main: #090d16;
+  --bg-sidebar: rgba(13, 18, 30, 0.85);
+  --bg-card: rgba(18, 26, 43, 0.65);
+  --bg-card-hover: rgba(28, 39, 64, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(99, 102, 241, 0.4);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-cyan: #06b6d4;
+  --accent-violet: #8b5cf6;
+  --accent-indigo: #6366f1;
+  --accent-pink: #ec4899;
+}
+
+[data-theme="midnight"] {
+  --bg-main: #0b1329;
+  --bg-sidebar: rgba(15, 23, 42, 0.9);
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-card-hover: rgba(51, 65, 85, 0.85);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(56, 189, 248, 0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-cyan: #38bdf8;
+  --accent-violet: #818cf8;
+  --accent-indigo: #4f46e5;
+  --accent-pink: #f43f5e;
+}
+
+[data-theme="emerald"] {
+  --bg-main: #051b14;
+  --bg-sidebar: rgba(6, 38, 28, 0.9);
+  --bg-card: rgba(9, 54, 39, 0.65);
+  --bg-card-hover: rgba(15, 76, 56, 0.85);
+  --border-color: rgba(16, 185, 129, 0.15);
+  --border-glow: rgba(16, 185, 129, 0.5);
+  --text-primary: #ecfdf5;
+  --text-secondary: #a7f3d0;
+  --accent-cyan: #14b8a6;
+  --accent-violet: #10b981;
+  --accent-indigo: #059669;
+  --accent-pink: #f59e0b;
+}
+
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-sidebar: rgba(255, 255, 255, 0.9);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(241, 245, 249, 0.95);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(99, 102, 241, 0.3);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-cyan: #0284c7;
+  --accent-violet: #7c3aed;
+  --accent-indigo: #4338ca;
+  --accent-pink: #db2777;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.glass-panel-hover:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glow);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
+}
+
+.glass-sidebar {
+  background: var(--bg-sidebar);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Neon Glow Text & Badges */
+.neon-glow-indigo {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+}
+.neon-glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Spin Slow Animation */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
